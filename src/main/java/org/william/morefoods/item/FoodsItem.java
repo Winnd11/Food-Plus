@@ -32,12 +32,12 @@ public class FoodsItem {
             .snack()
             .build();
 
-//    public static final FoodComponent TACOS_COMPONENT = new FoodComponent.Builder()
-//            .nutrition(4)
-//            .saturationModifier(0.8f)
-//            .snack()
-//            .build();
-//
+    public static final FoodComponent TACOS_COMPONENT = new FoodComponent.Builder()
+            .nutrition(4)
+            .saturationModifier(0.8f)
+            .snack()
+            .build();
+
     public static final FoodComponent PIZZA_COMPONENT = new FoodComponent.Builder()
             .snack()
             .nutrition(8)
@@ -55,8 +55,6 @@ public class FoodsItem {
             .saturationModifier(0.3f)
             .build();
 
-    //cheese
-
     public static Item registerItem(Item item, String id) {
         Identifier itemID = Identifier.of(MoreFoods.MOD_ID, id);
 
@@ -70,7 +68,7 @@ public class FoodsItem {
     public static final Item coconut = registerItem(new Item(new Item.Settings().food(COCONUT_COMPONENT)), "coconut");
     public static final Item pineapple = registerItem(new Item(new Item.Settings().food(PINEAPPLE_COMPONENT)), "pineapple");
     public static final Item scooby = registerItem(new Item(new Item.Settings().food(SCOOBY_COMPONENT)), "scooby");
-//    public static final Item tacos = registerItem(new Item(new Item.Settings().food(TACOS_COMPONENT)), "tacos");
+    public static final Item tacos = registerItem(new Item(new Item.Settings().food(TACOS_COMPONENT)), "tacos");
     public static final Item pizza = registerItem(new Item(new Item.Settings().food(PIZZA_COMPONENT)), "pizza");
     public static final Item sushi = registerItem(new Item(new Item.Settings().food(SUSHI_COMPONENT)), "sushi");
     public static final Item tomato = registerItem(new Item(new Item.Settings().food(TOMATO_COMPONENT)), "tomato");
