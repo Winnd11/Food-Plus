@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "morefoods",
+	"version": "${version}",
+	"name": "morefoods",
+	"description": "A mod that adds more foods!",
+	"authors": [
+		"Winnd11"
+	],
+	"contact": {
+		"homepage": "https://github.com/Winnd11",
+		"sources": "https://github.com/Winnd11"
+	},
+	"license": "MIT",
+	"icon": "assets/morefoods/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.william.morefoods.MoreFoods"
+		],
+		"fabric-datagen": [
+			"org.william.morefoods.MorefoodsDataGenerator"
+		],
+		"client": [
+			"org.william.morefoods.MoreFoodsClient"
+		]
+	},
+	"mixins": [
+		"morefoods.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.3",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
