@@ -1,11 +1,15 @@
 package org.william.morefoods.item;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.FoodComponent;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.william.morefoods.MoreFoods;
 
@@ -73,7 +77,24 @@ public class FoodsItem {
     public static final Item sushi = registerItem(new Item(new Item.Settings().food(SUSHI_COMPONENT)), "sushi");
     public static final Item tomato = registerItem(new Item(new Item.Settings().food(TOMATO_COMPONENT)), "tomato");
 
+    public static final RegistryKey<ItemGroup> CUSTOM_FOODS_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MoreFoods.MOD_ID, "item_group"));
+    public static final ItemGroup CUSTOM_FOODS = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(FoodsItem.coconut))
+            .displayName(Text.translatable("Foods"))
+            .build();
+
     public static void register() {
         MoreFoods.LOGGER.info("loading... " + MoreFoods.MOD_ID);
+
+        Registry.register(Registries.ITEM_GROUP, CUSTOM_FOODS_KEY, CUSTOM_FOODS);
+        ItemGroupEvents.modifyEntriesEvent(CUSTOM_FOODS_KEY).register(ItemGroup -> {
+            ItemGroup.add(FoodsItem.chips);
+            ItemGroup.add(FoodsItem.coconut);
+            ItemGroup.add(FoodsItem.pineapple);
+            ItemGroup.add(FoodsItem.pizza);
+            ItemGroup.add(FoodsItem.scooby);
+            ItemGroup.add(FoodsItem.sushi);
+            ItemGroup.add(FoodsItem.tomato);
+        });
     }
 }
