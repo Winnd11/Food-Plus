@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<!--     <img src="https://img.shields.io/modrinth/dt/mod-food%2B%2B" alt="Modrinth Downloads"/> -->
+    <img src="https://img.shields.io/modrinth/dt/qXvyb8xm" alt="Modrinth Downloads"/>
     <img src="https://img.shields.io/badge/Alpha-1.0.0-blue" alt="Version Badge"/>
 </p>
 
