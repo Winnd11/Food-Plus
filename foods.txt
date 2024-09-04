@@ -5,3 +5,9 @@
 5. Sushi
 6. Scooby-Snacks
 7. Tomato
+8. Blue-Berries
+9. Cookie-Cat
+10. Grapes
+11. Hamburguer
+12. Popcorn
+13. Soda
