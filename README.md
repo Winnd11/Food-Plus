@@ -9,5 +9,4 @@
 
 ---
 ## Overview
-A mod that adds various different foods to the game, including foods from several famous cartoons and series. It is currently in the alpha version, containing only 7 different foods. My plan is for it to have more than 100 different foods.
-
+A mod that adds different types of food including fruits, sweets, savory snacks and more!
