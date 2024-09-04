@@ -4,10 +4,10 @@
 
 <p align="center">
     <img src="https://img.shields.io/modrinth/dt/qXvyb8xm" alt="Modrinth Downloads"/>
+    <img src="https://img.shields.io/badge/Minecraft-1.21-Green" alt="Version Badge"/>
     <img src="https://img.shields.io/badge/Alpha-1.0.1-blue" alt="Version Badge"/>
 </p>
 
 ---
 ## Overview
-A mod that adds various different foods to the game, including foods from several famous cartoons and series. It is currently in the alpha version, containing only 7 different foods. My plan is for it to have more than 100 different foods.
-
+A mod that adds different types of food including fruits, sweets, savory snacks and more!
