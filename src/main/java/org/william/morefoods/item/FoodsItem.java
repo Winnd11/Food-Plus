@@ -14,48 +14,19 @@ import net.minecraft.util.Identifier;
 import org.william.morefoods.MoreFoods;
 
 public class FoodsItem {
-    //create food(FoodComponent foodComponent) Settings!!
-    public static final FoodComponent chips_component = new FoodComponent.Builder()
-            .nutrition(3)
+    public static final FoodComponent HIGH_COMPONENT = new FoodComponent.Builder()
+            .nutrition(8)
+            .saturationModifier(0.8f)
+            .build();
+
+    public static final FoodComponent MEDIUM_COMPONENT = new FoodComponent.Builder()
+            .nutrition(5)
             .saturationModifier(0.6f)
             .build();
 
-    public static final FoodComponent COCONUT_COMPONENT = new FoodComponent.Builder()
-            .nutrition(4)
-            .saturationModifier(0.7f)
-            .build();
-
-    public static final FoodComponent PINEAPPLE_COMPONENT = new FoodComponent.Builder()
-            .nutrition(4)
-            .saturationModifier(0.8f)
-            .build();
-
-    public static final FoodComponent SCOOBY_COMPONENT = new FoodComponent.Builder()
-            .nutrition(3)
-            .saturationModifier(0.8f)
-            .snack()
-            .build();
-
-    public static final FoodComponent TACOS_COMPONENT = new FoodComponent.Builder()
-            .nutrition(4)
-            .saturationModifier(0.8f)
-            .snack()
-            .build();
-
-    public static final FoodComponent PIZZA_COMPONENT = new FoodComponent.Builder()
-            .snack()
-            .nutrition(8)
-            .saturationModifier(0.3f)
-            .build();
-
-    public static final FoodComponent SUSHI_COMPONENT = new FoodComponent.Builder()
-            .nutrition(4)
-            .saturationModifier(0.8f)
-            .build();
-
-    public static final FoodComponent TOMATO_COMPONENT = new FoodComponent.Builder()
-            .snack()
+    public static final FoodComponent LOW_COMPONENT = new FoodComponent.Builder()
             .nutrition(2)
+            .snack()
             .saturationModifier(0.3f)
             .build();
 
@@ -68,19 +39,25 @@ public class FoodsItem {
     }
 
     // registerItem() insert item in the game
-    public static final Item chips = registerItem(new Item(new Item.Settings().food(chips_component)), "chips");
-    public static final Item coconut = registerItem(new Item(new Item.Settings().food(COCONUT_COMPONENT)), "coconut");
-    public static final Item pineapple = registerItem(new Item(new Item.Settings().food(PINEAPPLE_COMPONENT)), "pineapple");
-    public static final Item scooby = registerItem(new Item(new Item.Settings().food(SCOOBY_COMPONENT)), "scooby");
-    public static final Item tacos = registerItem(new Item(new Item.Settings().food(TACOS_COMPONENT)), "tacos");
-    public static final Item pizza = registerItem(new Item(new Item.Settings().food(PIZZA_COMPONENT)), "pizza");
-    public static final Item sushi = registerItem(new Item(new Item.Settings().food(SUSHI_COMPONENT)), "sushi");
-    public static final Item tomato = registerItem(new Item(new Item.Settings().food(TOMATO_COMPONENT)), "tomato");
+    public static final Item chips = registerItem(new Item(new Item.Settings().food(MEDIUM_COMPONENT)), "chips");
+    public static final Item coconut = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "coconut");
+    public static final Item pineapple = registerItem(new Item(new Item.Settings().food(MEDIUM_COMPONENT)), "pineapple");
+    public static final Item scooby = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "scooby");
+    public static final Item tacos = registerItem(new Item(new Item.Settings().food(HIGH_COMPONENT)), "tacos");
+    public static final Item pizza = registerItem(new Item(new Item.Settings().food(HIGH_COMPONENT)), "pizza");
+    public static final Item sushi = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "sushi");
+    public static final Item tomato = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "tomato");
+    public static final Item blueberries = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "blueberries");
+    public static final Item cookiecat = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "cookiecat");
+    public static final Item grapes = registerItem(new Item(new Item.Settings().food(LOW_COMPONENT)), "grapes");
+    public static final Item hamburguer = registerItem(new Item(new Item.Settings().food(HIGH_COMPONENT)), "hamburguer");
+    public static final Item popcorn = registerItem(new Item(new Item.Settings().food(HIGH_COMPONENT)), "popcorn");
+    public static final Item soda = registerItem(new Item(new Item.Settings().food(MEDIUM_COMPONENT)), "soda");
 
     public static final RegistryKey<ItemGroup> CUSTOM_FOODS_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MoreFoods.MOD_ID, "item_group"));
     public static final ItemGroup CUSTOM_FOODS = FabricItemGroup.builder()
             .icon(() -> new ItemStack(FoodsItem.coconut))
-            .displayName(Text.translatable("Foods"))
+            .displayName(Text.translatable("itemGroup.MoreFoods"))
             .build();
 
     public static void register() {
@@ -88,13 +65,12 @@ public class FoodsItem {
 
         Registry.register(Registries.ITEM_GROUP, CUSTOM_FOODS_KEY, CUSTOM_FOODS);
         ItemGroupEvents.modifyEntriesEvent(CUSTOM_FOODS_KEY).register(ItemGroup -> {
-            ItemGroup.add(FoodsItem.chips);
-            ItemGroup.add(FoodsItem.coconut);
-            ItemGroup.add(FoodsItem.pineapple);
-            ItemGroup.add(FoodsItem.pizza);
-            ItemGroup.add(FoodsItem.scooby);
-            ItemGroup.add(FoodsItem.sushi);
-            ItemGroup.add(FoodsItem.tomato);
+
+            Item[] array = {chips, coconut, pineapple, pizza, scooby, sushi, tomato, blueberries, cookiecat, grapes, hamburguer, popcorn, soda};
+
+            for(Item n:array) {
+                ItemGroup.add(n);
+            }
         });
     }
 }

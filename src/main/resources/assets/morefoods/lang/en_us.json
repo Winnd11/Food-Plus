@@ -5,5 +5,12 @@
   "item.morefoods.scooby": "Scooby-Snacks",
   "item.morefoods.pizza": "Pizza",
   "item.morefoods.sushi": "Sushi",
-  "item.morefoods.tomato": "Tomato"
+  "item.morefoods.tomato": "Tomato",
+  "item.morefoods.blueberries": "Blue-Berries",
+  "item.morefoods.cookiecat": "Cookie-Cat",
+  "item.morefoods.grapes": "Grapes",
+  "item.morefoods.hamburguer": "Hamburguer",
+  "item.morefoods.popcorn": "Popcorn",
+  "item.morefoods.soda": "Soda",
+  "itemGroup.MoreFoods": "Foods"
 }
